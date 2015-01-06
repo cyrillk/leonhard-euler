@@ -1,0 +1,25 @@
+package net.projecteuler
+
+object Problem002 extends App {
+
+  private val Limit = 4000000
+
+  def fib(nums: Seq[Int]): Seq[Int] = {
+    nums match {
+      case Nil => fib(nums :+ 1)
+      case 1 :: Nil => fib(nums :+ 1)
+      case _ :+ a :+ b =>
+        val next = a + b
+        if (next < Limit)
+          fib(nums :+ next)
+        else
+          nums
+    }
+  }
+
+  val fibs = fib(Seq())
+
+  val result = fibs.filter(_ % 2 == 0).sum
+
+  println("result: " + result)
+}
