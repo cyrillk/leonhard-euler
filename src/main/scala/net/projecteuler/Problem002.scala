@@ -1,5 +1,8 @@
 package net.projecteuler
 
+/**
+  * Even Fibonacci numbers
+  */
 object Problem002 extends AbstractProblem {
 
   final val Limit = 4000000
