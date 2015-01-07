@@ -1,8 +1,8 @@
 package net.projecteuler
 
-object Problem002 extends App {
+object Problem002 extends AbstractProblem {
 
-  private val Limit = 4000000
+  final val Limit = 4000000
 
   def fib(nums: Seq[Int]): Seq[Int] = {
     nums match {
@@ -17,9 +17,5 @@ object Problem002 extends App {
     }
   }
 
-  val fibs = fib(Seq())
-
-  val result = fibs.filter(_ % 2 == 0).sum
-
-  println("result: " + result)
+  override def result = fib(Seq()).filter(_ % 2 == 0).sum
 }
