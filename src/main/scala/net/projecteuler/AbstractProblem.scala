@@ -13,11 +13,12 @@ object AbstractProblem {
 
   def run(code: => Any, source: String) {
     val (time, res) = elapsed(code)
-    println(s"$source completed in $time ns. Result: $res")
+    println(s"$source completed in $time ms. Result: $res")
   }
 
   def elapsed(code: => Any) = {
     val start = System.nanoTime
-    (System.nanoTime - start, code)
+    val result = code
+    ((System.nanoTime - start) / 1e6, result)
   }
 }
