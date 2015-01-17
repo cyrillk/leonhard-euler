@@ -1,5 +1,6 @@
-package net.projecteuler
+package net.projecteuler.until10
 
+import net.projecteuler.AbstractProblem
 import math._
 import scala.annotation.tailrec
 
