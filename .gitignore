@@ -1,8 +1,8 @@
 *.class
 *.log
 
-.ensime/
-.ensime_cache/
+.ensime
+.ensime_cache
 
 # sbt specific
 .cache/
