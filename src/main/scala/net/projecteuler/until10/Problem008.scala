@@ -9,21 +9,8 @@ import scala.annotation.tailrec
  */
 object Problem008 extends AbstractProblem {
 
-  private final val SliceSize = 13
-
-  @tailrec
-  private def calculate(from: Int, nums: Seq[Long], result: Long): Long = {
-
-    if (from + SliceSize > nums.size) {
-      result
-    } else {
-      val sl = nums.slice(from, from + SliceSize)
-      val m = sl.reduce(_ * _)
-      calculate(from + 1, nums, if (m > result) m else result)
-    }
-  }
-
-  override def result = calculate(0, str.toArray.map(_.asDigit.toLong), 0)
+  override def result = str.toArray.map(_.asDigit.toLong).sliding(13).map(_.product).max
+  // calculate(0, str.toArray.map(_.asDigit.toLong), 0)
 
   private def str =
     """73167176531330624919225119674426574742355349194934
