@@ -5,7 +5,7 @@ import math._
 import scala.annotation.tailrec
 
 /**
- * Problem 10 - ???
+ * Problem 10 - Summation of primes
  */
 object Problem010 extends AbstractProblem {
 
