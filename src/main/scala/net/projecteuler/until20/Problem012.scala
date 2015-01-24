@@ -11,19 +11,14 @@ object Problem012 extends AbstractProblem {
 
   private lazy val limit: Long = 500
 
-  private def middle(x: Long) = math.ceil(x.toDouble / 2).toLong
-
   @tailrec
-  private def find(a: Long, previousSum: Long = 0): Long = {
-    val b = previousSum + a // (1L to a).sum
+  private def find(a: Long, previousSum: Long): Long = {
+    val next = previousSum + a
+    val root = ceil(sqrt(next)).toLong
+    val dels = (1L to root).filter(next % _ == 0)
+    val nums = dels.map(next / _) ++ dels
+    if (nums.distinct.length > limit) next else find(a + 1, next)
+ }
 
-    if (b % 2 == 0) {
-      val n = ((1L to middle(b)) :+ b).count(b % _ == 0)
-      if (n > limit) b else find(a + 1, b)
-    } else {
-      find(a + 1)
-    }
-  }
-
-  override def result = find(1)
+  override def result = find(1, 0)
 }
