@@ -7,7 +7,7 @@ import scala.annotation.tailrec
 /**
  * Problem 15 - Lattice paths
  *
- *
+ * Solved with a combinatorics formula
  */
 object Problem015 extends AbstractProblem {
 
