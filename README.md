@@ -1,4 +1,4 @@
 leonhard-euler
 ==============
 
-projecteuler solutions using Scala
+[projecteuler](https://projecteuler.net/archives) solutions using Scala
